@@ -1,0 +1,343 @@
+@import "definitions";
+
+.active-mobile {
+  // color: $green;
+  font-size: 10px;
+}
+
+@media screen and (max-width: 768px)  {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  /* --------------------------------------------------------
+       Navbars
+  -------------------------------------------------------- */
+
+  // Main navbar
+
+  .navbar {
+    display: none;
+  }
+
+  // Mobile navbar
+
+  .navbar-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 15vh;
+    z-index: 2;
+    animation: fadeInDown;
+    animation-duration: 1s;
+    background: transparent;
+    background-image: linear-gradient(white, rgba(255,255,255,0.001));
+    position: fixed;
+    width: 100%;
+    padding: 16px 20px;
+    & span {
+      top: 25px;
+      right: 10px;
+      line-height: 0.9;
+    }
+    // & img {
+    //   position: fixed;
+    //   top: 30px;
+    //   left: 30px;
+    //   width:40px;
+    // }
+  }
+
+  .languages {
+    & a {
+      font-size: 14px;
+      &:focus {
+        -webkit-text-decoration: none;
+        text-decoration: none;
+        -webkit-border-bottom: 5px solid $green;
+        -moz-border-bottom: 5px solid $green;
+        border-bottom: 5px solid $green;
+      }
+      &:hover {
+        text-decoration: none;
+        -webkit-text-decoration: none;
+      }
+    }
+    & li:first-child:before {
+      padding-left: 0;
+    }
+  }
+
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 60;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+    & a {
+      padding: 12px;
+      text-decoration: none;
+      font-size: 30px;
+      color: white;
+      display: block;
+      transition: 0.3s;
+      font-weight: bold;
+      &:hover {
+        color: $green;
+        -webkit-color: $green;
+      }
+      &:focus {
+        color: $green;
+        -webkit-color: $green;
+      }
+    }
+  }
+
+  .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .closebtn {
+    position: absolute;
+    top: 30px;
+    right: 45px;
+    font-size: 70px;
+  }
+
+  .openbtn {
+    font-size: 40px;
+    cursor: pointer;
+  }
+
+  // @media screen and (max-height: 450px) {
+  //   .overlay a {font-size: 20px}
+  //   .overlay .closebtn {
+  //   font-size: 40px;
+  //   top: 15px;
+  //   right: 35px;
+  //   }
+  // }
+
+  /* --------------------------------------------------------
+       Home page
+  -------------------------------------------------------- */
+
+  .home-main-content {
+    padding: 30% 20px 0px 20px;
+    font-size: 20px;
+    line-height: 2.5rem;
+    text-align: center;
+    animation: fadeIn;
+    animation-duration: 1s;
+    height: 85vh;
+    & p {
+      margin-bottom: 20px;
+    }
+    & p:first-of-type {
+      font-size: 40px;
+    }
+    & span {
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      &:after {
+        position: absolute;
+        content: '';
+        border-bottom: 12px solid $green ;
+        transform: translateX(-50%);
+        bottom: 0px;
+        width: 100%;
+        left: 50%;
+        z-index: -1;
+      }
+    }
+    & div > p > a {
+      padding: 10px 18px;
+    }
+  }
+
+  .home-button {
+    margin-bottom: 30px;
+    display: inline-block;
+  }
+
+
+  /* --------------------------------------------------------
+       About page
+  -------------------------------------------------------- */
+
+  .about-content {
+    padding: 100px 20px 50px 20px;
+    animation: none;
+    & > :first-child {
+      display: block;
+      font-weight: bold;
+      font-size: 25px;
+      margin-top: 0px;
+    }
+    & > :nth-child(3) {
+      // margin-bottom: 40px;
+      font-size: 20px;
+      width: 100%;
+    }
+    & span {
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      &:after {
+        position: absolute;
+        content: '';
+        border-bottom: 12px solid $green ;
+        transform: translateX(-50%);
+        bottom: 4px;
+        width: 100%;
+        left: 50%;
+        z-index: -1;
+      }
+    }
+    & > p {
+      animation: fadeIn;
+      animation-duration: 2.5s;
+    }
+  }
+
+  .top-section, .bottom-section {
+    display: block;
+    justify-content: space-between;
+    animation: fadeIn;
+    animation-duration: 2.5s;
+    & > div {
+      width: 100%;
+    }
+  }
+
+  .top-section {
+    margin-top: 0px;
+  }
+
+  .header {
+    margin-top: 20px !important;
+  }
+
+  .languages-about {
+    display: block;
+  }
+
+  .second-languages {
+    margin-top: 0px;
+  }
+
+  .header {
+    display: block;
+    border-bottom: 7px solid $green;
+  }
+
+  /* --------------------------------------------------------
+       Work page
+  -------------------------------------------------------- */
+
+  .works-content {
+    z-index: -1;
+    padding: 100px 20px 20px 20px;
+    & > p {
+      display: block;
+      font-weight: bold;
+      font-size: 25px;
+      margin-top: 0px;
+      margin-bottom: 18px;
+    }
+    & span {
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      &:after {
+        position: absolute;
+        content: '';
+        border-bottom: 12px solid $green ;
+        transform: translateX(-50%);
+        bottom: 4px;
+        width: 100%;
+        left: 50%;
+        z-index: -1;
+      }
+    }
+  }
+
+  .works-grid {
+    grid-gap: 30px;
+    grid-template-columns: 1fr;
+  }
+
+  .project-content {
+    width: 90%;
+  }
+
+  .project-title a {
+    font-size: 20px;
+    border-bottom: 7px solid $green;
+  }
+
+  .project-description {
+    font-size: 16px;
+  }
+
+  .video-background, video {
+    z-index: -1;
+  }
+
+  /* --------------------------------------------------------
+       Contact page
+  -------------------------------------------------------- */
+
+  .contacts-content {
+    padding: 100px 20px 50px 20px;
+    font-size: 20px;
+    width: 100%;
+  }
+
+  .contact-header {
+    display: block;
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 0px;
+    & span {
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      &:after {
+        position: absolute;
+        content: '';
+        border-bottom: 12px solid $green ;
+        transform: translateX(-50%);
+        bottom: 4px;
+        width: 100%;
+        left: 50%;
+        z-index: -1;
+      }
+    }
+  }
+
+  .email-phone {
+    margin-top: 30px;
+    & span:first-of-type {
+      border-bottom: 7px solid $green;
+    }
+    & span:nth-of-type(2) {
+      margin-top: 0;
+    border-bottom: 7px solid $green;
+    }
+  }
+
+// END
+
+
+}
